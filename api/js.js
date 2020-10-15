@@ -1,10 +1,10 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts" />
 
 function load_jsjs(doc) {
-    $("jve").each((index, jve) => {
+    document.querySelectorAll("jve").forEach((jve) => {
         const script = jve.textContent;
 
-        $("jve").empty();
+        document.querySelectorAll("jve").forEach((e) => jve.children.forEach((e) => e.delete()));
 
         const table = document.createElement("table");
         const tr = document.createElement("tr");
