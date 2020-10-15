@@ -1,0 +1,40 @@
+scriptview {
+    color: black;
+    background: grey;
+    line-height: 23px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+    left: 0;
+    box-decoration-break: clone;
+    cursor: default;
+    transition: all .5s;
+}
+
+button.jve_button {
+    color: white;
+    background: black;
+    border: 1px rgb(43, 43, 43) solid;
+    box-shadow: 0 0 5px grey;
+    border-radius: 10px;
+    padding: 7.5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+button.jve_button:hover {
+    color: black;
+    background: white;
+    border: 1px rgb(0, 0, 0) solid;
+    box-shadow: 0 0 20px grey;
+    border-radius: 2.5px;
+    padding: 10px;
+    margin: 2.5px;
+    transition: all .5s;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
