@@ -50,8 +50,8 @@ function load_loginjs() {
                         if (user.id == id.value && user.pass == password.value) {
                             bool = true;
                             document.cookie = "logged=true";
-                            window.location.reload();
                             document.cookie = `user=${user.id}`;
+                            window.location.reload();
                         }
                     })
                     if (!bool) {
@@ -70,6 +70,7 @@ function load_loginjs() {
                 })
             }
         } else {
+            document.cookie = "logged=true";
             const id = cookies.find((r) => r.trim().startsWith("id=")).split("=")[1];
             document.querySelectorAll("a[login=\"\"]").forEach((e) => {
                 /**
@@ -118,6 +119,7 @@ function load_loginjs() {
             })
         }
     } else {
+        document.cookie = "logged=false";
         document.querySelectorAll("a[login=\"\"]").forEach((e) => {
             const lg = document.createElement("a");
             /**
@@ -163,8 +165,8 @@ function load_loginjs() {
                     if (user.id == id.value && user.pass == password.value) {
                         bool = true;
                         document.cookie = "logged=true";
-                        window.location.reload();
                         document.cookie = `user=${user.id}`;
+                        window.location.reload();
                     }
                 })
                 if (!bool) {
