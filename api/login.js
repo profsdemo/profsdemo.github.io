@@ -46,7 +46,7 @@ function load_loginjs() {
 
                     var bool = false;
                     request.forEach((user) => {
-                        if (user.id == id.value && CryptoJS.enc.Utf8.parse(user.password) == password.value) {
+                        if (user.id == id.value && user.password == password.value) {
                             bool = true;
                             document.cookie = "logged=true";
                             document.cookie = `user=${user.id}`;
