@@ -85,6 +85,7 @@ function load_loginjs() {
                 lg.onclick = (e) => {
                     if (window.confirm("Voulez vous vraiment vous déconnecter ?\n\n(OK = Oui, Annuler = Non)")) {
                         document.cookie = "logged=false";
+                        document.cookie = "user=";
                         window.location.reload();
                     }
                 }
