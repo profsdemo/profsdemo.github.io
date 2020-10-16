@@ -6,14 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bonjour !</title>
         <!-- For enable code embed -->
-        <script src="http://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script src="api/crypto-js.js"></script>
         <script src="api/js.js"></script>
+        <script src="api/login.js"></script>
         <!-- End -->
-            <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="jve.css">
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="popup.css">
     </head>
 
-    <body onload="load_jsjs()">
+    <body onload="load_jsjs(); load_loginjs()">
+        <div class="hover_bkgr_fricc">
+            <span class="helper"></span>
+            <div>
+                <div class="popupCloseButton">&times;</div>
+                <h2>Connection</h2>
+                <table style="margin: auto;">
+                    <tr>
+                        <td>
+                            <label for="id" style="padding-right: 20px;">Nom d'utilisateur</label>
+                        </td>
+                        <td>
+                            <input type="text" name="id" id="id">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Mot de passe</label>
+                        </td>
+                        <td>
+                            <input type="password" name="password" id="password">
+                        </td>
+                    </tr>
+                </table>
+                <button login style="margin: auto; margin-top: 20px;">Se connecter</button>
+            </div>
+        </div>
         <h1>Bonjour</h1>
+        <a login></a>
 
         <h2>Description</h2>
         <h3>Test de script</h3>

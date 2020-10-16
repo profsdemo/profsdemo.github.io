@@ -1,6 +1,6 @@
 /// <reference path="../node_modules/@types/jquery/index.d.ts" />
 
-function load_jsjs(doc) {
+function load_jsjs() {
     document.querySelectorAll("jve").forEach((jve) => {
         const script = jve.textContent;
 

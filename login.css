@@ -1,0 +1,35 @@
+login {
+    text-align: right;
+}
+
+button[login=""] {
+    transition: all .5s;
+
+    border: 1px black solid;
+    background-color: rgb(46, 46, 46);
+    cursor: pointer;
+    padding: 10px;
+}
+
+button[login=""]:hover {
+    transition: all .5s;
+
+    box-shadow: 0 0 10px white;
+    background-color: rgb(31, 31, 31);
+    padding: 20px;
+    text-decoration: underline;
+}
+
+button[login=""]:disabled {
+    transition: all .5s;
+
+    background-color: rgba(46, 46, 46, 0);
+    border: 1px white solid;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    padding: 10px;
+    text-decoration: none;
+}
+
+h1 {
+    width: fit-content;
+}
