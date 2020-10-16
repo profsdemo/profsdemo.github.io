@@ -117,6 +117,71 @@ function load_loginjs() {
                 }
             })
         }
+    } else {
+        document.querySelectorAll("a[login=\"\"]").forEach((e) => {
+            const lg = document.createElement("a");
+            /**
+             * @type {HTMLAnchorElement}
+             */
+            const login = e;
+            lg.textContent = "Se connecter";
+            lg.style.cursor = "pointer";
+            lg.onclick = () => {
+                document.querySelector("div.hover_bkgr_fricc")
+                    .style.display = "block";
+            }
+
+            login.appendChild(lg);
+        })
+
+        document.querySelector("button[login=\"\"]").onclick = () => {
+            const inputs = document.querySelectorAll("input");
+            const id = inputs[0], password = inputs[1];
+
+            /**
+             * @type {HTMLButtonElement}
+             */
+            const btn = document.querySelector("button[login=\"\"]");
+            btn.disabled = true;
+            btn.textContent = "Connection...";
+            const request = new XMLHttpRequest();
+            request.open('GET', "https://profsdemo.github.io/users/pass.json");
+            request.responseType = "json";
+            request.send();
+            request.addEventListener("loadend", () => {
+                if (request.status == 404) {
+                    password.value = "";
+                    id.value = "";
+                    alert("Ce service est en maintenance !");
+                    btn.disabled = false;
+                    btn.textContent = "Se connecter";
+                }
+
+                var bool = false;
+                request.response.forEach((user) => {
+                    console.log(user);
+                    if (user.id == id.value && user.pass == password.value) {
+                        bool = true;
+                        document.cookie = "logged=true";
+                        window.location.reload();
+                        document.cookie = `user=${user.id}`;
+                    }
+                })
+                if (!bool) {
+                    password.value = "";
+                    alert("Le nom d'utilisateur ou/et le mot de passe est/sont incorrecte !");
+                    btn.disabled = false;
+                    btn.textContent = "Se connecter";
+                }
+            });
+            request.addEventListener("error", () => {
+                password.value = "";
+                id.value = "";
+                alert("Ce service est en maintenance !");
+                btn.disabled = false;
+                btn.textContent = "Se connecter";
+            })
+        }
     }
 
     document.querySelector('.popupCloseButton').onclick = function () {
