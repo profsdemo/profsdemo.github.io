@@ -71,7 +71,7 @@ function load_loginjs() {
             }
         } else {
             document.cookie = "logged=true";
-            const id = cookies.find((r) => r.trim().startsWith("id=")).split("=")[1];
+            const id = cookies.find((r) => r.trim().startsWith("user=")).split("=")[1];
             document.querySelectorAll("a[login=\"\"]").forEach((e) => {
                 /**
                  * @type {HTMLAnchorElement}
