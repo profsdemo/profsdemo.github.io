@@ -45,14 +45,16 @@ function load_loginjs() {
                     }
 
                     var bool = false;
-                    request.forEach((user) => {
-                        if (user.id == id.value && user.password == password.value) {
+                    request.response.forEach((user) => {
+                        console.log(user);
+                        if (user.id == id.value && user.pass == password.value) {
                             bool = true;
                             document.cookie = "logged=true";
+                            window.location.reload();
                             document.cookie = `user=${user.id}`;
                         }
                     })
-                    if (bool) {
+                    if (!bool) {
                         password.value = "";
                         alert("Le nom d'utilisateur ou/et le mot de passe est/sont incorrecte !");
                         btn.disabled = false;
