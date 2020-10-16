@@ -4,7 +4,13 @@ function load_jsjs(doc) {
     document.querySelectorAll("jve").forEach((jve) => {
         const script = jve.textContent;
 
-        document.querySelectorAll("jve").forEach((e) => jve.children.forEach((e) => e.delete()));
+        for (const key in jve.children) {
+            if (jve.children.hasOwnProperty(key)) {
+                const element = jve.children[key];
+                element.remove();
+            }
+        }
+        jve.textContent = "";
 
         const table = document.createElement("table");
         const tr = document.createElement("tr");
@@ -30,7 +36,7 @@ function load_jsjs(doc) {
         }
         script_elm.children[script_elm.children.length - 1].remove();
         script_elm.classList.add("jve_script_view");
-        
+
         start_btn.textContent = "Tester";
         start_btn.onclick = () => {
             return new Function(script).call(this);
