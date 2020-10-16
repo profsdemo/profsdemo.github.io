@@ -1,7 +1,7 @@
 /// <reference path="crypto-js.js" />
 
 function load_loginjs() {
-    const cookies = document.cookie.split(";");
+    const cookies = document.cookie.split("; ");
     if (cookies.some((r) => r.trim().startsWith("logged="))) {
         const logged = cookies.find((r) => r.trim().startsWith("logged=")).split("=")[1];
         if (logged == "false") {
