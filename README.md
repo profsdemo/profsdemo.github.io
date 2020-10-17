@@ -1,5 +1,7 @@
 # profsdemo.github.io
 
+[![](https://profsdemo.github.io/favicon.ico)](httpss://profsdemo.github.io)
+
 ## Infos
 
 Vous pouver vous connecter au site pour accèder à des services spéciaux ! **Il est imposible pour le `moment` de créer de compte**  💻 **SPOIL :**
