@@ -253,7 +253,7 @@ function load_loginjs() {
             })
         }
     } else {
-        document.cookie = "logged=false";
+        document.cookie = "logged=false; Secure";
         document.querySelectorAll("a[login=\"\"]").forEach((e) => {
             const lg = document.createElement("a");
             /**

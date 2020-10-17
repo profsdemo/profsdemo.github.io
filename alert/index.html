@@ -7,7 +7,7 @@
         <title>Alerte rouge !</title>
     </head>
 
-    <body onload="document.querySelector('input').value = ''; load_jsjs(); load_loginjs()">
+    <body onload="document.querySelector('input').value = ''; load_jsjs();">
         <!DOCTYPE html>
         <html lang="en">
 
@@ -16,57 +16,14 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>alert()</title>
                 <script src="../api/js.js"></script>
-                <script src="../api/login.js"></script>
-                <link rel="stylesheet" href="../login.css">
-                <link rel="stylesheet" href="../popup.css">
                 <link rel="stylesheet" href="../jve.css">
                 <link rel="stylesheet" href="../code.css">
             </head>
 
             <body>
-                <div class="hover_bkgr_fricc">
-                    <span class="helper"></span>
-                    <div>
-                        <div class="popupCloseButton">&times;</div>
-                        <div loginErrorView>Le nom d'utilisateur ou/et le mot de passe est/sont incorrecte(s) !
-                            <br>
-                            <button
-                                style="padding: 5px; border-radius: 5px; margin: 5px; margin-top: 10px; cursor: pointer; border: 2px solid darkred; background-color: transparent;"
-                                onclick="document.querySelector('div[loginErrorView]').style.display = 'none'"
-                                title="Fermer l'erreur.">×</button>
-                        </div>
-                        <h2>Connection</h2>
-                        <table style="margin: auto;">
-                            <tr>
-                                <td>
-                                    <label for="id" style="padding-right: 20px;">Nom d'utilisateur</label>
-                                </td>
-                                <td>
-                                    <input type="text" name="id" id="id">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label for="password">Mot de passe</label>
-                                </td>
-                                <td>
-                                    <input type="password" name="password" id="password">
-                                    <br>
-                                    <button loginViewPass
-                                        style="width: 100%; border: 1px black solid; border-radius: 0 0 10px 10px;"
-                                        title="Cliquer pour afficher le mot de passe, re-cliquer pour le masquer.">👁️</button>
-                                </td>
-                            </tr>
-                        </table>
-                        <button login style="margin: auto; margin-top: 20px;">Se connecter</button>
-                    </div>
-                </div>
                 <h1>
                     Boite de dialogue
                 </h1>
-                <a login></a>
-                <br>
-                <br>
                 Actualiser la page ?
                 <br>
                 <br>
