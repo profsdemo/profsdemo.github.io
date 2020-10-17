@@ -39,9 +39,9 @@ button[login=""]:hover {
 button[login=""]:disabled {
     transition: all .5s;
 
-    background-color: rgba(46, 46, 46, 0);
-    border: 1px white solid;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    background-color: transparent;
+    border: 1px transparent solid;
+    text-shadow: 0 0 1px transparent;
     padding: 10px;
     text-decoration: none;
 }

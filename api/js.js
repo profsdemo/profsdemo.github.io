@@ -3,7 +3,13 @@
 function load_jsjs() {
     document.querySelectorAll("jve").forEach((jve) => {
         const os = jve.textContent;
-        const script = jve.textContent;
+        var script = jve.textContent;
+        while (script.includes("//\\n")) {
+            script = script.replace("//\\n", "\\n");
+        }
+        while (script.includes("//\\t")) {
+            script = script.replace("//\\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+        }
 
         for (const key in jve.children) {
             if (jve.children.hasOwnProperty(key)) {
@@ -27,7 +33,7 @@ function load_jsjs() {
         table.style.borderRadius = "10px";
         table.style.background = "lightgrey";
 
-        const str = os.split("\\n");
+        const str = script.replace("//\\n", "\\n").split("\\n");
         for (const e in str) {
             if (str.hasOwnProperty(e)) {
                 const element = str[e];
@@ -40,7 +46,7 @@ function load_jsjs() {
 
         start_btn.textContent = "Tester";
         start_btn.onclick = () => {
-            return new Function(script).call(this);
+            return new Function(os).call(this);
         }
         start_btn.classList.add("jve_button");
 

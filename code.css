@@ -17,3 +17,18 @@ code {
     cursor: default;
     transition: all .5s;
 }
+
+code[no-css=""] {
+    color: unset;
+    background: unset;
+    line-height: unset;
+    border-radius: unset;
+    padding: unset;
+    margin: unset;
+    position: unset;
+    font-family: "Fira Code";
+    left: unset;
+    box-decoration-break: unset;
+    cursor: unset;
+    transition: all .5s;
+}

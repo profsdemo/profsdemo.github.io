@@ -75,19 +75,17 @@ function load_loginjs() {
                 })
             }
 
-            document.querySelector("button[loginViewPass=\"\"]").onmousedown = () => {
+            document.querySelector("button[loginViewPass=\"\"]").onclick = () => {
                 const password = document.querySelectorAll("input")[1];
-                password.type = "text";
-                password.style.backgroundColor = "red";
-                document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid red";
-            }
-
-            document.querySelector("button[loginViewPass=\"\"]").onmouseup = () => {
-                const password = document.querySelectorAll("input")[1];
-                password.type = "password";
-                password.style.backgroundColor = "";
-                document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid black";
-            }
+                if (password.type == "password") {
+                    password.type = "text";
+                    password.style.backgroundColor = "red";
+                    document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid red";
+                } else {
+                    password.type = "password";
+                    password.style.backgroundColor = "";
+                    document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid black";
+                }           }
         } else {
             document.cookie = "logged=true";
             const id = cookies.find((r) => r.trim().startsWith("user=")).split("=")[1];
