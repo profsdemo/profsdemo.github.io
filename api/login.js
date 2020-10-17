@@ -320,6 +320,20 @@ function load_loginjs() {
         }
     }
 
+    
+    document.querySelector("button[loginViewPass=\"\"]").onclick = () => {
+        const password = document.querySelectorAll("input")[1];
+        if (password.type == "password") {
+            password.type = "text";
+            password.style.backgroundColor = "red";
+            document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid red";
+        } else {
+            password.type = "password";
+            password.style.backgroundColor = "";
+            document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid black";
+        }
+    }
+
     document.querySelector('.popupCloseButton').onclick = function () {
         document.querySelector('.hover_bkgr_fricc').style.display = "none";
     };
