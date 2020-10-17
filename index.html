@@ -20,6 +20,11 @@
             <span class="helper"></span>
             <div>
                 <div class="popupCloseButton">&times;</div>
+                <div loginErrorView>Le nom d'utilisateur ou/et le mot de passe est/sont incorrecte !
+                    <button
+                        style="padding: 5px; margin: 5px; cursor: pointer; border: 2px solid black; background-color: transparent;"
+                        onclick="document.querySelector('div[loginErrorView]').style.display = 'none'">×</button>
+                </div>
                 <h2>Connection</h2>
                 <table style="margin: auto;">
                     <tr>
@@ -36,6 +41,10 @@
                         </td>
                         <td>
                             <input type="password" name="password" id="password">
+                            <br>
+                            <button loginViewPass
+                                style="width: 100%; border: 1px black solid; border-radius: 0 0 10px 10px;"
+                                title="Laisser appuyer pour voir le mot de passe.">👁️</button>
                         </td>
                     </tr>
                 </table>

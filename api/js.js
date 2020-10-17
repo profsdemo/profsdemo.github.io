@@ -2,6 +2,7 @@
 
 function load_jsjs() {
     document.querySelectorAll("jve").forEach((jve) => {
+        const os = jve.textContent;
         const script = jve.textContent;
 
         for (const key in jve.children) {
@@ -26,7 +27,7 @@ function load_jsjs() {
         table.style.borderRadius = "10px";
         table.style.background = "lightgrey";
 
-        const str = script.split("\\n");
+        const str = os.split("\\n");
         for (const e in str) {
             if (str.hasOwnProperty(e)) {
                 const element = str[e];
@@ -42,6 +43,9 @@ function load_jsjs() {
             return new Function(script).call(this);
         }
         start_btn.classList.add("jve_button");
+
+        script_elm.style.width = "95%";
+        script_elm.style.display = "block"
 
         td1.appendChild(script_elm);
         td2.appendChild(start_btn);

@@ -2,6 +2,22 @@ login {
     text-align: right;
 }
 
+input[name="id"], 
+input[name="password"] {
+    border: 1px solid black;
+    padding: 10px;
+    width: max-content;
+    margin: 0;
+}
+
+input[name="id"] {
+    border-radius: 5px;
+}
+
+input[name="password"] {
+    border-radius: 5px 5px 0 0;
+}
+
 button[login=""] {
     transition: all .5s;
 
@@ -28,6 +44,13 @@ button[login=""]:disabled {
     text-shadow: 0 0 1px rgba(0, 0, 0, 0);
     padding: 10px;
     text-decoration: none;
+}
+
+div[loginErrorView=""] {
+    transition: all .5;
+    background-color: red;
+    display: none;
+    padding: 10px;
 }
 
 h1 {

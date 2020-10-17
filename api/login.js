@@ -21,6 +21,12 @@ function load_loginjs() {
                 login.appendChild(lg);
             })
 
+            document.querySelectorAll("input").forEach((input) => {
+                input.onchange = () => {
+                    document.querySelector("div[loginErrorView=\"\"]").style.display = "none";
+                }
+            })
+
             document.querySelector("button[login=\"\"]").onclick = () => {
                 const inputs = document.querySelectorAll("input");
                 const id = inputs[0], password = inputs[1];
@@ -46,7 +52,6 @@ function load_loginjs() {
 
                     var bool = false;
                     request.response.forEach((user) => {
-                        console.log(user);
                         if (user.id == id.value && user.pass == password.value) {
                             bool = true;
                             document.cookie = "logged=true";
@@ -56,7 +61,7 @@ function load_loginjs() {
                     })
                     if (!bool) {
                         password.value = "";
-                        alert("Le nom d'utilisateur ou/et le mot de passe est/sont incorrecte !");
+                        document.querySelector("div[loginErrorView=\"\"]").style.display = "block";
                         btn.disabled = false;
                         btn.textContent = "Se connecter";
                     }
@@ -68,6 +73,20 @@ function load_loginjs() {
                     btn.disabled = false;
                     btn.textContent = "Se connecter";
                 })
+            }
+
+            document.querySelector("button[loginViewPass=\"\"]").onmousedown = () => {
+                const password = document.querySelectorAll("input")[1];
+                password.type = "text";
+                password.style.backgroundColor = "red";
+                document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid red";
+            }
+
+            document.querySelector("button[loginViewPass=\"\"]").onmouseup = () => {
+                const password = document.querySelectorAll("input")[1];
+                password.type = "password";
+                password.style.backgroundColor = "";
+                document.querySelector("button[loginViewPass=\"\"]").style.border = "1px solid black";
             }
         } else {
             document.cookie = "logged=true";
