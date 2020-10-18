@@ -2,6 +2,10 @@ login {
     text-align: right;
 }
 
+a[login=""] {
+    color: blue;
+}
+
 input[name="id"], 
 input[name="password"] {
     border: 1px solid black;
