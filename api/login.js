@@ -1,4 +1,21 @@
+/**
+ * References, do not REMOVE
+ */
 /// <reference path="crypto-js.js" />
+/// <reference path="../node_modules/@types/jquery/index.d.ts" />
+
+/**
+ * /------------------------\
+ * |      FastLogin.js      |
+ * |        By JulMan       |
+ * \------------------------/
+ * 
+ * Require : jQuery, popup.api style
+ * Not nessesary : popup.api (implemeted)
+ * 
+ * Only used in "profsdemo.github.io" ! Do not use without my authorization !
+ * 
+ */
 
 function load_loginjs() {
     document.cookie = "SameSite=Strict; Secure"
@@ -15,8 +32,7 @@ function load_loginjs() {
                 lg.textContent = "Se connecter";
                 lg.style.cursor = "pointer";
                 lg.onclick = () => {
-                    document.querySelector("div.hover_bkgr_fricc")
-                        .style.display = "block";
+                    $("div.hover_bkgr_fricc").fadeIn("fast");
                 }
 
                 login.appendChild(lg);
@@ -105,7 +121,7 @@ function load_loginjs() {
                     document.cookie = "logged=false";
                     document.cookie = "user=";
                     const popup = document.querySelector("div.hover_bkgr_fricc");
-                    popup.style.display = "block";
+                    $("div.hover_bkgr_fricc").fadeIn("fast");
                     const popup_content = popup.querySelector("div");
                     for (const key in popup_content.children) {
                         if (popup_content.children.hasOwnProperty(key)) {
@@ -214,8 +230,7 @@ function load_loginjs() {
                             lg.textContent = "Se connecter";
                             lg.style.cursor = "pointer";
                             lg.onclick = () => {
-                                document.querySelector("div.hover_bkgr_fricc")
-                                    .style.display = "block";
+                                $("div.hover_bkgr_fricc").fadeIn("fast");
                             }
 
                             login.appendChild(lg);
@@ -263,8 +278,7 @@ function load_loginjs() {
             lg.textContent = "Se connecter";
             lg.style.cursor = "pointer";
             lg.onclick = () => {
-                document.querySelector("div.hover_bkgr_fricc")
-                    .style.display = "block";
+                $("div.hover_bkgr_fricc").fadeIn("fast");
             }
 
             login.appendChild(lg);
@@ -335,6 +349,6 @@ function load_loginjs() {
     }
 
     document.querySelector('.popupCloseButton').onclick = function () {
-        document.querySelector('.hover_bkgr_fricc').style.display = "none";
+        $('.hover_bkgr_fricc').fadeOut("fast")
     };
 }

@@ -1,4 +1,16 @@
-/// <reference path="../node_modules/@types/jquery/index.d.ts" />
+
+/**
+ * /--------------\
+ * |    JVE.js    |
+ * |   by JulMan  |
+ * \--------------/
+ * 
+ * Require : *NOTHING*
+ * Not nessesary: jQuery (not used)
+ * 
+ * Use <jve></jve> with your code inside this element for use JVE.js and enable JavaScript executor !
+ * 
+ */
 
 function load_jsjs() {
     document.querySelectorAll("jve").forEach((jve) => {
